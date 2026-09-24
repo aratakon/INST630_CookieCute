@@ -1,59 +1,113 @@
 /* INTENTIONALLY UGLY STARTER STYLES */
 /* These styles are very, very ugly. */
 /* Time to make them attractive, legible, and usable */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 body {
-    font-family: Times, serif;
-    background-color: white;
+    font-family: "Silkscreen", sans-serif;
+    background-color: black;
+    color: #00FF00; 
     margin: 0;
-    padding: 0;
+    padding: 40px;
+    /* perspective: 800px; */
 }
+
 
 .recipe-container {
     /* background-color: yellow; */
     /* border: 10px solid red; */
+    display: grid;
+  grid-template-areas:
+    "header"
+    "recipeMeta"
+    "description"
+    "ingredients"
+    "instructions"
+    "footer";
+    grid-template-columns: 1fr;
+  /* YOUR CODE: grid-template-columns */
+  grid-template-rows: auto 1fr auto;
     margin: 10px;
     padding: 5px;
+    border: 2px dashed #00FF00; 
+    border-radius: 2rem;
 }
 
+
+
 .recipe-header {
-    /* background-color: lime; */
-    /* border: 3px dotted blue; */
+    grid-area: header; 
+    padding: 20px;
+    padding-top: 40px; 
     text-align: center;
+     
 }
 
 .recipe-title {
     /* color: red; */
+    font-family: "Press Start 2P", system-ui;
+    /* come back and decide the font here  */
+    /* font-family: "Silkscreen", sans-serif; */
+    
     font-size: 40px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .recipe-meta {
-    /* background-color: orange; */
-    /* border: 2px dashed purple; */
+    grid-area: recipeMeta; 
+    /* padding-: 20px; */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center; 
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    font-size: 15px;
+    border: 2px dotted #00FF00;
+    border-radius: 20px;
+    /* this part was werid didn't know this  */
+    width: fit-content;
+    justify-self: center; 
+    padding: 10px;
+
 }
 
 .recipe-description {
     /* background-color: aqua; */
-    font-size: 8px;
-    color: purple;
+    grid-area: description; 
+    padding: 30px;
+    font-size: 20px;
+    border-bottom: 2px dashed #00FF00;
+
 }
 
 .ingredients-section {
+    grid-area: ingredients; 
+    border-bottom: 2px dashed #00FF00;
+    padding: 30px; 
+    
     /* background-color: pink; */
     /* border: 5px solid brown; */
 }
 
 .ingredients-list {
     list-style: none;
-    border: 1px solid black;
-    border-radius: 2rem;
+    /* border: 1px solid #00FF00; */
+    /* border-radius: 2rem; */
+    display: flex;
+    flex-direction: column;
     padding: 24px;
+    width: fit-content;
+    margin-top: 10px ;
+    font-size: 20px;
+  
 
 }
 
@@ -61,24 +115,44 @@ body {
     /* background-color: white; */
     /* border: 1px solid black; */
     margin: 2px;
-    padding: 1px;
+    padding: 4px;
 }
 
 .instructions-section {
+    grid-area: instructions; 
+    padding: 30px; 
+    border-bottom: 2px dashed #00FF00;
+
+    /* border: 2px; */
     /* background-color: lightgray; */
     /* border: 3px solid navy; */
 }
 
+.instructions-list{
+
+     /* border: 2px solid #00FF00; */
+    /* padding: 30px;  */
+    /* border-radius: 20px; */
+     padding: 30px;
+    width: fit-content;
+    margin-top: 10px ;
+    font-size: 20px;
+     display: flex;
+    flex-direction: column;
+}
 .instruction-step {
+    
     /* background-color: beige; */
     /* border: 2px solid maroon; */
     margin: 3px;
 }
 
 .recipe-footer {
+    grid-area: footer; 
     /* background-color: violet; */
-    text-align: right;
-    font-size: 6px;
+    /* text-align: right; */
+    padding: 20px;
+    font-size: 18px;
 }
 
 .recipe-image {
@@ -87,25 +161,62 @@ body {
     /* border: 5px solid black; */
 }
 
-.spinning-image {
+h2{
+    font-size: 28px;
+}
+
+@media (max-width: 48rem) {
+  .recipe-container {
+    /* background-color: yellow; */
+    /* border: 10px solid red; */
+    display: grid;
+  grid-template-areas:
+    "header"
+    "recipeMeta"
+    "description"
+    "ingredients"
+    "instructions"
+    "footer";
+       /* margin: 1px; */
+        /* padding: 5px; */
+
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    border: none;
+
+}
+body{
+    padding: 0px; 
+}
+
+  
+  .list-section {
+    /* YOUR CODE: change flex-direction if needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .list-item {
+    /* YOUR CODE: full width on mobile */
+    width: 100%;
+  }
+}
+
+/* Had to google this to understand how to make it spin vertically  */
+.spinningImage {
             width: 200px;
             height: 200px;
-            
-            /* 2. Apply the animation property */
-            animation: spin 3s linear infinite;
+            /* border: 2px solid white;  */
+            animation: funnySpin 6s linear infinite;
         }
-
-        /* 3. Define the spin animation behavior */
-        @keyframes spin {
+        
+        @keyframes funnySpin {
             from {
-                transform: rotate(360deg);
+                transform: rotateY(0deg); 
             }
             to {
-                transform: rotate(0deg);
+                transform: rotateY(360deg);
             }
         }
 
-* {
-    margin: 2px;
-    padding: 1px;
-}

@@ -6,49 +6,20 @@
     <title>Recipe Card Assignment - Make This Beautiful!</title>
     <link rel="stylesheet" href="style.css">
      <style>
-        /* 1. Add perspective to the parent container for 3D depth */
-        body {
-            perspective: 800px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
-
-        /* 2. Target the image and apply the 3D animation */
-        .spinning-image-3d {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            
-            /* Apply the animation */
-            animation: spin3D 4s linear infinite;
-        }
-
-        /* 3. Define the 3D spin behavior */
-        @keyframes spin3D {
-            from {
-                transform: rotateY(0deg); /* Change to rotateX for a vertical flip */
-            }
-            to {
-                transform: rotateY(360deg);
-            }
-        }
+        
     </style>
 </head>
-<body>
+<body class="page-layout">
     <div class="recipe-container">
         <!-- Recipe Header Section -->
         <header class="recipe-header">
-            <h1 class="recipe-title">Classic Chocolate Chip Cookies</h1>
-            <img src=/CookieMinecraft.png 
+            <h1 class="recipe-title">CLASSIC CHOCOLATE CHIP COOKIES</h1>
+            <img src= CookieMinecraft.png 
                  alt="Golden brown chocolate chip cookies on a cooling rack" 
-                 class="spinning-image">
-            <img src=/CookieMinecraft.png 
+                 class="spinningImage">
+            <!-- <img src=/CookieMinecraft.png 
                  alt="Golden brown chocolate chip cookies on a cooling rack" 
-                 class="spinning-image-3d">
+                 class="spinning-image-3d"> -->
         </header>
 
         <!-- Recipe Meta Information -->
@@ -79,16 +50,17 @@
         <section class="ingredients-section">
             <h2>Ingredients</h2>
             <ul class="ingredients-list">
-                <li>2¼ cups all-purpose flour</li>
-                <li>1 teaspoon baking soda</li>
-                <li>1 teaspoon salt</li>
-                <li>1 cup (2 sticks) butter, softened</li>
-                <li>¾ cup granulated sugar</li>
-                <li>¾ cup packed brown sugar</li>
-                <li>2 large eggs</li>
-                <li>2 teaspoons vanilla extract</li>
-                <li>2 cups chocolate chips</li>
-                <li>1 cup chopped walnuts (optional)</li>
+                <!-- I added a checkbox for the User Experience & Usability here  -->
+                <li> <input type="checkbox"> 2¼ cups all-purpose flour</li>
+                <li> <input type="checkbox"> 1 teaspoon baking soda</li>
+                <li> <input type="checkbox"> 1 teaspoon salt</li>
+                <li> <input type="checkbox"> 1 cup (2 sticks) butter, softened</li>
+                <li> <input type="checkbox"> ¾ cup granulated sugar</li>
+                <li> <input type="checkbox"> ¾ cup packed brown sugar</li>
+                <li> <input type="checkbox"> 2 large eggs</li>
+                <li> <input type="checkbox"> 2 teaspoons vanilla extract</li>
+                <li> <input type="checkbox"> 2 cups chocolate chips</li>
+                <li> <input type="checkbox"> 1 cup chopped walnuts (optional)</li>
             </ul>
         </section>
 
