@@ -189,18 +189,6 @@ h2{
 body{
     padding: 0px; 
 }
-
-  
-  .list-section {
-    /* YOUR CODE: change flex-direction if needed */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .list-item {
-    /* YOUR CODE: full width on mobile */
-    width: 100%;
-  }
 }
 
 /* Had to google this to understand how to make it spin vertically  */
